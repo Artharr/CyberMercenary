@@ -1,0 +1,11 @@
+fileFormatVersion: 2
+guid: e515e0f94cefc4c0db54b45cba621544
+ShaderImporter:
+  userData: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 101492
+  packageName: Voxel Scifi Environment - Free version
+  packageVersion: 1.0
+  assetPath: Assets/voxel_scifi_free/Standard Assets/Effects/ImageEffects/Shaders/ColorCorrectionSelective.shader
+  uploadId: 203674

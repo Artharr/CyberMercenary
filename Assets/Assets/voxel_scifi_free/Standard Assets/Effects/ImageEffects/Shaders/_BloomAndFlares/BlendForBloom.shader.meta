@@ -1,0 +1,11 @@
+fileFormatVersion: 2
+guid: 7856cbff0a0ca45c787d5431eb805bb0
+ShaderImporter:
+  userData: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 101492
+  packageName: Voxel Scifi Environment - Free version
+  packageVersion: 1.0
+  assetPath: Assets/voxel_scifi_free/Standard Assets/Effects/ImageEffects/Shaders/_BloomAndFlares/BlendForBloom.shader
+  uploadId: 203674

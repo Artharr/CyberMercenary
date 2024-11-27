@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: 6788af605d2f1244789565913bb4e7f6
+timeCreated: 1434032656
+licenseType: Store
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 101492
+  packageName: Voxel Scifi Environment - Free version
+  packageVersion: 1.0
+  assetPath: Assets/voxel_scifi_free/Standard Assets/Editor/ImageEffects/CreaseShadingEditor.cs
+  uploadId: 203674

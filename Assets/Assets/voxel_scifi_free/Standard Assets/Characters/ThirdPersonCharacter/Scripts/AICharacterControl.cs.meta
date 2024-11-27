@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 8c5335f0882fe4d478883cc8c58ce906
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 101492
+  packageName: Voxel Scifi Environment - Free version
+  packageVersion: 1.0
+  assetPath: Assets/voxel_scifi_free/Standard Assets/Characters/ThirdPersonCharacter/Scripts/AICharacterControl.cs
+  uploadId: 203674

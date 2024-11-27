@@ -1,0 +1,11 @@
+fileFormatVersion: 2
+guid: 987fb0677d01f43ce8a9dbf12271e668
+ShaderImporter:
+  userData: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 101492
+  packageName: Voxel Scifi Environment - Free version
+  packageVersion: 1.0
+  assetPath: Assets/voxel_scifi_free/Standard Assets/Effects/ImageEffects/Shaders/_DepthOfField/DepthOfField34.shader
+  uploadId: 203674

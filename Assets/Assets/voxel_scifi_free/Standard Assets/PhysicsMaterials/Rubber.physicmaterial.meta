@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 52baaeb214519f347a35cf0edfd262ff
+timeCreated: 1427463081
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 101492
+  packageName: Voxel Scifi Environment - Free version
+  packageVersion: 1.0
+  assetPath: Assets/voxel_scifi_free/Standard Assets/PhysicsMaterials/Rubber.physicmaterial
+  uploadId: 203674

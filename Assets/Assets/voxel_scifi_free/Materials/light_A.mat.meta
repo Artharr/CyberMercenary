@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 7da5d917d68331e43a0a2e1031bd4496
+timeCreated: 1506476604
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 101492
+  packageName: Voxel Scifi Environment - Free version
+  packageVersion: 1.0
+  assetPath: Assets/voxel_scifi_free/Materials/light_A.mat
+  uploadId: 203674

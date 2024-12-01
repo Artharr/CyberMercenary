@@ -22,7 +22,12 @@ public static class SettingsManager
         return new SettingsData
         {
             musicVolume = 0.5f,
-            soundsVolume = 0.5f
+            soundsVolume = 0.5f,
+            brightness = 1f,
+            isFullScreen = true,
+            quality = 2,
+            resolutionIndex = -1
+            
         };
     }
 

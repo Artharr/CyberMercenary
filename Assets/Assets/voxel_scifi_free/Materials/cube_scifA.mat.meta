@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 8015dc356ece84c49878d380c0f403e8
+timeCreated: 1505415447
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 101492
+  packageName: Voxel Scifi Environment - Free version
+  packageVersion: 1.0
+  assetPath: Assets/voxel_scifi_free/Materials/cube_scifA.mat
+  uploadId: 203674

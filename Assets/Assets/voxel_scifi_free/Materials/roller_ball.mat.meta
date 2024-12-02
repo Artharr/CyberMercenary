@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 71f6b18251e242c4db6d445783385e8a
+timeCreated: 1506492619
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 101492
+  packageName: Voxel Scifi Environment - Free version
+  packageVersion: 1.0
+  assetPath: Assets/voxel_scifi_free/Materials/roller_ball.mat
+  uploadId: 203674

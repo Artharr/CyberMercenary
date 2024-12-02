@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 427fdf36119bab44a9131abd19b90f57
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 101492
+  packageName: Voxel Scifi Environment - Free version
+  packageVersion: 1.0
+  assetPath: Assets/voxel_scifi_free/Standard Assets/Editor/ImageEffects/DepthOfFieldEditor.cs
+  uploadId: 203674

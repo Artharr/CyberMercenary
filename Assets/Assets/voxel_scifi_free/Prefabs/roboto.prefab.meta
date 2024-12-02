@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 8c2834b24c6868241a411d67241aa8e8
+timeCreated: 1506571428
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 101492
+  packageName: Voxel Scifi Environment - Free version
+  packageVersion: 1.0
+  assetPath: Assets/voxel_scifi_free/Prefabs/roboto.prefab
+  uploadId: 203674

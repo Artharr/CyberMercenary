@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: dd00a4ca6148a08459372d1937b26f1e
+timeCreated: 1506488002
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 101492
+  packageName: Voxel Scifi Environment - Free version
+  packageVersion: 1.0
+  assetPath: Assets/voxel_scifi_free/Prefabs/light_A.prefab
+  uploadId: 203674

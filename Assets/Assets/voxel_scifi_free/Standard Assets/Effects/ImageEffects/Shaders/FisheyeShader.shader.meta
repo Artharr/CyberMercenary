@@ -1,0 +1,11 @@
+fileFormatVersion: 2
+guid: 874ceab4425f64bccb1d14032f4452b1
+ShaderImporter:
+  userData: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 101492
+  packageName: Voxel Scifi Environment - Free version
+  packageVersion: 1.0
+  assetPath: Assets/voxel_scifi_free/Standard Assets/Effects/ImageEffects/Shaders/FisheyeShader.shader
+  uploadId: 203674

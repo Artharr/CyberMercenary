@@ -24,8 +24,8 @@ public class PlayerMovement : MonoBehaviour
         playerController.Move(moveDir.normalized * Time.deltaTime * moveSpeed);
         if (moveDir != Vector3.zero)
         {
-            playerMesh.transform.rotation = Quaternion.Lerp(
-                                                playerMesh.transform.rotation,
+            transform.rotation = Quaternion.Lerp(
+                                                transform.rotation,
                                                 Quaternion.LookRotation(moveDir, Vector3.up),
                                                 turnSpeed);
         }

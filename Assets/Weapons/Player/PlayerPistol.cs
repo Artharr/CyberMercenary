@@ -13,6 +13,6 @@ public class Pistol : MonoBehaviour
     void Shoot()
     {
         Quaternion rotation = transform.rotation * Quaternion.Euler(90, 0, 0);   
-        GameObject bullet = Instantiate(bulletPrefab, transform.position, rotation);
+        GameObject bullet = Instantiate(bulletPrefab, transform.position+Vector3.up, rotation);
     }
 }

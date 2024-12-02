@@ -8,7 +8,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private GameObject playerMesh;
     [SerializeField] private float moveSpeed;
     [SerializeField] private float turnSpeed;
-    private float numeber = 5
+    private float numeber = 5;
     void Start()
     {
         moveAction.Enable();

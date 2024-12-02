@@ -35,7 +35,7 @@ public class PlayerMovement : MonoBehaviour
             transform.position = Vector3.Lerp(
                                     transform.position,
                                     new Vector3(transform.position.x, hitInfo.point.y + capsuleHeight, transform.position.z),
-                                    0.5f
+                                    0.2f
                                     );
         }
     }

@@ -4,12 +4,16 @@ using UnityEngine.EventSystems;
 
 public class PistolPlayer : MonoBehaviour, IWeapon
 {
-    //script added to capsule not to player becouse of rotation
     public GameObject bulletPrefab;
     private float detectionRadius = 50f;
     private float fireRate = 2f;
     private float shootTimmer = 0f;
     private bool isActive = false;
+
+    void Start()
+    {
+        Activate();
+    }
     void Update()
     {
         if (!isActive) return;

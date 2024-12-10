@@ -4,14 +4,21 @@ using UnityEngine.EventSystems;
 
 public class PistolPlayer : MonoBehaviour, IWeapon
 {
-    public GameObject bulletPrefab;
+    public GameObject bulletPrefabLvl1;
+    public GameObject bulletPrefabLvl2;
+    public GameObject bulletPrefabLvl3;
     private float detectionRadius = 50f;
     private float fireRate = 2f;
     private float shootTimmer = 0f;
     private bool isActive = false;
+    private int level = 1;
 
     void Start()
     {
+        Upgrade();
+        Upgrade();
+        Upgrade();
+        Upgrade();
         Activate();
     }
     void Update()
@@ -39,7 +46,25 @@ public class PistolPlayer : MonoBehaviour, IWeapon
             Vector3 direction = (nearestEnemy.transform.position - transform.position).normalized;
             rotation = Quaternion.LookRotation(direction);
         }
-        GameObject bullet = Instantiate(bulletPrefab, transform.position+Vector3.up, rotation);
+        GameObject bullet = Instantiate(BulletBasedOnLevel(), transform.position+Vector3.up, rotation);
+    }
+
+    private GameObject BulletBasedOnLevel()
+    {
+        switch (level)
+        {
+            case 1:
+                return bulletPrefabLvl1;
+            case 2:
+                return bulletPrefabLvl1;
+            case 3:
+                return bulletPrefabLvl2;
+            case 4:
+                return bulletPrefabLvl2;
+            case 5:
+                return bulletPrefabLvl3;
+        }
+        return null;
     }
 
     private GameObject FindNearestEnemy()
@@ -71,6 +96,17 @@ public class PistolPlayer : MonoBehaviour, IWeapon
 
     public void Upgrade()
     {
-        throw new System.NotImplementedException();
+        level++;
+        switch (level)
+        {
+            case 2:
+                fireRate = 1.5f;
+                return;
+            case 3:
+                return;
+            case 4:
+                fireRate = 1f;
+                return;
+        }
     }
 }

@@ -2,19 +2,43 @@ using UnityEngine;
 
 public class TurretPlayer : MonoBehaviour, IWeapon
 {
-    public GameObject turretPrefab;
+    public GameObject turretPrefabLvl1;
+    public GameObject turretPrefabLvl2;
+    public GameObject turretPrefabLvl3;
     private float fireRate = 10f;
+    private int level = 1;
     void Start()
     {
+        Upgrade();
+        
+        Upgrade();
+        Upgrade();
+        Upgrade();
         Activate();
     }
 
     // Update is called once per frame
     private void CreateTurret()
     {
-        GameObject turret = Instantiate(turretPrefab, transform.position, transform.rotation);
+        GameObject turret = Instantiate(BulletBasedOnLevel(), transform.position, transform.rotation);
     }
-
+    private GameObject BulletBasedOnLevel()
+    {
+        switch (level)
+        {
+            case 1:
+                return turretPrefabLvl1;
+            case 2:
+                return turretPrefabLvl1;
+            case 3:
+                return turretPrefabLvl2;
+            case 4:
+                return turretPrefabLvl2;
+            case 5:
+                return turretPrefabLvl3;
+        }
+        return null;
+    }
 
     public void Activate()
     {
@@ -23,6 +47,21 @@ public class TurretPlayer : MonoBehaviour, IWeapon
 
     public void Upgrade()
     {
-        throw new System.NotImplementedException();
+        level++;
+        switch (level)
+        {
+            case 1:
+                break;
+            case 2:
+                fireRate = 7f;
+                break;
+            case 3:
+                break;
+            case 4:
+                fireRate = 5f;
+                break;
+            case 5:
+                break;
+        }
     }
 }

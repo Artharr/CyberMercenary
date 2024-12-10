@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -5851603505623526214}
   - component: {fileID: 5942037906467989042}
   m_Layer: 0
-  m_Name: Ice
+  m_Name: IceLvl4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -151,3 +151,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9b8c53cde7fe184e995de82a30e579e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  freezeTime: 3

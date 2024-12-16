@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1548718269171511375}
   - component: {fileID: 3109351207763909969}
   - component: {fileID: 7534809798106276482}
-  - component: {fileID: 8104844307782601099}
+  - component: {fileID: 5378160729834424841}
   - component: {fileID: -6098808868980258636}
   m_Layer: 0
   m_Name: TurretlLvl1
@@ -88,7 +88,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &8104844307782601099
+--- !u!114 &5378160729834424841
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

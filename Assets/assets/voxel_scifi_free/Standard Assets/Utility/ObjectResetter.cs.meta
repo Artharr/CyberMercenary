@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 643c971818f68d3439e84b5d8bdafe07
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 101492
+  packageName: Voxel Scifi Environment - Free version
+  packageVersion: 1.0
+  assetPath: Assets/voxel_scifi_free/Standard Assets/Utility/ObjectResetter.cs
+  uploadId: 203674

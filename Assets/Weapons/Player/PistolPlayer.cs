@@ -93,7 +93,6 @@ public class PistolPlayer : MonoBehaviour, IWeapon
     {
         isActive = true;
     }
-
     public void Upgrade()
     {
         level++;

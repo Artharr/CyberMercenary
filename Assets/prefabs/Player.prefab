@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 4954138921316120555}
   - component: {fileID: 5884309605960673298}
   - component: {fileID: 4804737268532783111}
-  - component: {fileID: 8623992778356846970}
-  - component: {fileID: -5257970832014894440}
   - component: {fileID: 7884603533206607151}
-  - component: {fileID: 1969170381383975303}
+  - component: {fileID: 1937490384171328991}
+  - component: {fileID: 3428039303691837679}
+  - component: {fileID: 1868460149708911919}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -100,12 +100,31 @@ MonoBehaviour:
       m_Action: Move
       m_Flags: 8
     m_Flags: 0
+  dashAction:
+    m_Name: Dash
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: e95bece4-bedf-4efe-b327-f1682e2421a2
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 38b41c52-402b-4631-bb49-f42c4a4df9f4
+      m_Path: <Keyboard>/shift
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Dash
+      m_Flags: 0
+    m_Flags: 0
   playerMesh: {fileID: 5398606893797061098}
   layerMask:
     serializedVersion: 2
     m_Bits: 0
   moveSpeed: 6
+  dashSpeed: 20
   turnSpeed: 0.05
+  dashTime: 0.5
 --- !u!143 &4804737268532783111
 CharacterController:
   m_ObjectHideFlags: 0
@@ -131,7 +150,22 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &8623992778356846970
+--- !u!114 &7884603533206607151
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2044675981142278583}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21c6f7c91aa2be94da3614db92591202, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  turretPrefabLvl1: {fileID: 3192649826293803230, guid: de0e4d7935870b3458cc31d821ed3264, type: 3}
+  turretPrefabLvl2: {fileID: 3192649826293803230, guid: 6a56b5d309108b54395b58fb3ff393d6, type: 3}
+  turretPrefabLvl3: {fileID: 3192649826293803230, guid: 820656be072cabc4ab7d1336d65331e1, type: 3}
+--- !u!114 &1937490384171328991
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -148,37 +182,7 @@ MonoBehaviour:
   IcePrefabLvl3: {fileID: 1702901805734530371, guid: c7330ba6699ac2c489b6ee9845e7f011, type: 3}
   IcePrefabLvl4: {fileID: 1702901805734530371, guid: 8406f3c73a7245e46b56daca1bfad9a6, type: 3}
   IcePrefabLvl5: {fileID: 1702901805734530371, guid: 4dedce122be0357429fe6bef132011a4, type: 3}
---- !u!114 &-5257970832014894440
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2044675981142278583}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 97accf234413455458a2c6c296d120a4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bulletPrefabLvl1: {fileID: 6964122086894304859, guid: 743d3371fee9eb64c8c01716fae0c071, type: 3}
-  bulletPrefabLvl2: {fileID: 6964122086894304859, guid: 946744b99a5e4074f8246249b5dac7d5, type: 3}
-  bulletPrefabLvl3: {fileID: 6964122086894304859, guid: ea3e38f5e94d5214da59c21abc5a9393, type: 3}
---- !u!114 &7884603533206607151
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2044675981142278583}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21c6f7c91aa2be94da3614db92591202, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  turretPrefabLvl1: {fileID: 3192649826293803230, guid: de0e4d7935870b3458cc31d821ed3264, type: 3}
-  turretPrefabLvl2: {fileID: 3192649826293803230, guid: 6a56b5d309108b54395b58fb3ff393d6, type: 3}
-  turretPrefabLvl3: {fileID: 3192649826293803230, guid: 820656be072cabc4ab7d1336d65331e1, type: 3}
---- !u!114 &1969170381383975303
+--- !u!114 &3428039303691837679
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -188,6 +192,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1199283260a7cad41a9cbb8c038290d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefabLvl1: {fileID: 6964122086894304859, guid: 743d3371fee9eb64c8c01716fae0c071, type: 3}
+  bulletPrefabLvl2: {fileID: 6964122086894304859, guid: 946744b99a5e4074f8246249b5dac7d5, type: 3}
+  bulletPrefabLvl3: {fileID: 6964122086894304859, guid: ea3e38f5e94d5214da59c21abc5a9393, type: 3}
+--- !u!114 &1868460149708911919
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2044675981142278583}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97accf234413455458a2c6c296d120a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   bulletPrefabLvl1: {fileID: 6964122086894304859, guid: 743d3371fee9eb64c8c01716fae0c071, type: 3}

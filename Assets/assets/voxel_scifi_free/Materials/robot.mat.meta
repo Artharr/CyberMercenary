@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: c17063e09a40b6d40a0a0c511e011d97
+timeCreated: 1505584454
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 101492
+  packageName: Voxel Scifi Environment - Free version
+  packageVersion: 1.0
+  assetPath: Assets/voxel_scifi_free/Materials/robot.mat
+  uploadId: 203674

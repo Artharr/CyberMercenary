@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: bcbfc3dbd866d484996c00a3eda113f9
+timeCreated: 1506644198
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 101492
+  packageName: Voxel Scifi Environment - Free version
+  packageVersion: 1.0
+  assetPath: Assets/voxel_scifi_free/Animations/elevator.anim
+  uploadId: 203674

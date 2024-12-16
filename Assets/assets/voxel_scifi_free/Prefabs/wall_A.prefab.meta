@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: aa316a49adc2f084fac5ab6a40e5a8a3
+timeCreated: 1506486840
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 101492
+  packageName: Voxel Scifi Environment - Free version
+  packageVersion: 1.0
+  assetPath: Assets/voxel_scifi_free/Prefabs/wall_A.prefab
+  uploadId: 203674

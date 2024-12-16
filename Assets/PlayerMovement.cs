@@ -1,3 +1,5 @@
+using Unity.Mathematics.Geometry;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -6,14 +8,15 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private CharacterController playerController;
     [SerializeField] private InputAction moveAction;
     [SerializeField] private GameObject playerMesh;
+    [SerializeField] private LayerMask layerMask;
     [SerializeField] private float moveSpeed;
     [SerializeField] private float turnSpeed;
+    float capsuleHeight = 0f;
     void Start()
     {
         moveAction.Enable();
+        capsuleHeight = playerController.height/2;
     }
-
-    // Update is called once per frame
     void Update()
     {
         Vector2 inputDir = moveAction.ReadValue<Vector2>();
@@ -21,10 +24,19 @@ public class PlayerMovement : MonoBehaviour
         playerController.Move(moveDir.normalized * Time.deltaTime * moveSpeed);
         if (moveDir != Vector3.zero)
         {
-            playerMesh.transform.rotation = Quaternion.Lerp(
-                                                            playerMesh.transform.rotation,
-                                                            Quaternion.LookRotation(moveDir, Vector3.up),
-                                                            turnSpeed);
+            transform.rotation = Quaternion.Lerp(
+                                                transform.rotation,
+                                                Quaternion.LookRotation(moveDir, Vector3.up),
+                                                turnSpeed);
+        }
+        bool hit = Physics.Raycast(transform.position, Vector3.down, out RaycastHit hitInfo,Mathf.Infinity);
+        if (hit)
+        {
+            transform.position = Vector3.Lerp(
+                                    transform.position,
+                                    new Vector3(transform.position.x, hitInfo.point.y + capsuleHeight, transform.position.z),
+                                    0.2f
+                                    );
         }
     }
 }

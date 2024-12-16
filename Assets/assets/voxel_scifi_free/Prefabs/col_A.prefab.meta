@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 6aecf3456f11166468124c695b00f745
+timeCreated: 1506646520
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 101492
+  packageName: Voxel Scifi Environment - Free version
+  packageVersion: 1.0
+  assetPath: Assets/voxel_scifi_free/Prefabs/col_A.prefab
+  uploadId: 203674

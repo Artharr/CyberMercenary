@@ -1,0 +1,11 @@
+fileFormatVersion: 2
+guid: 438ddd58d82c84d9eb1fdc56111702e1
+ShaderImporter:
+  userData: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 101492
+  packageName: Voxel Scifi Environment - Free version
+  packageVersion: 1.0
+  assetPath: Assets/voxel_scifi_free/Standard Assets/Effects/ImageEffects/Shaders/ColorCorrectionCurvesSimple.shader
+  uploadId: 203674

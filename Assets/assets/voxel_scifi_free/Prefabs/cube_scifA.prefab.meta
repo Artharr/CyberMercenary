@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: fe64962353630324cbfb66d67b5fd3e4
+timeCreated: 1506486987
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 101492
+  packageName: Voxel Scifi Environment - Free version
+  packageVersion: 1.0
+  assetPath: Assets/voxel_scifi_free/Prefabs/cube_scifA.prefab
+  uploadId: 203674

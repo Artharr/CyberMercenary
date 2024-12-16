@@ -1,0 +1,11 @@
+fileFormatVersion: 2
+guid: d3b1c8c1036784176946f5cfbfb7fe4c
+ShaderImporter:
+  userData: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 101492
+  packageName: Voxel Scifi Environment - Free version
+  packageVersion: 1.0
+  assetPath: Assets/voxel_scifi_free/Standard Assets/Effects/ImageEffects/Shaders/SunShaftsComposite.shader
+  uploadId: 203674

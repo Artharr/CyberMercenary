@@ -3,7 +3,7 @@ using UnityEngine;
 public class GameData
 {
     public int experience;
-    public bool isLevel1Unlocked;
+    public bool isLevel1Unlocked = true;
     public bool isLevel2Unlocked;
     public bool isLevel3Unlocked;
     public bool isLevel4Unlocked;

@@ -8515,7 +8515,7 @@ MonoBehaviour:
   qualityDropdown: {fileID: 988037300}
   brightnessOverlay: {fileID: 247327944}
   resolutionDropdown: {fileID: 2079262937}
-  sceneToLoad: Level_1
+  sceneToLoad: InGameMenu
   noSavedGameDialog: {fileID: 1045818713}
 --- !u!4 &1554883837
 Transform:

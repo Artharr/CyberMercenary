@@ -9,16 +9,22 @@ public class IceMachinePlayer : MonoBehaviour, IWeapon
     public GameObject IcePrefabLvl5;
     private float fireRate = 5f;
     private int level = 1;
+    bool isActive = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        Upgrade();
-        Upgrade();
-        Upgrade();
-        Upgrade();
-        Activate();
     }
-
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.C)&& !isActive)
+        {
+            Activate();
+        }
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            Upgrade();
+        }
+    }
     void Shoot()
     {
         GameObject bullet = Instantiate(BulletBasedOnLevel(), transform.position, transform.rotation);
@@ -42,6 +48,7 @@ public class IceMachinePlayer : MonoBehaviour, IWeapon
     }
     public void Activate()
     {
+        isActive = true;
         InvokeRepeating(nameof(Shoot), 0f, fireRate);
     }
 

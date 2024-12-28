@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 52d05f3ddfe95604790a88608a9fe9ad
+guid: edf770b0565b08a4e91b86989b31d7d3
 timeCreated: 1506154292
 licenseType: Store
 TextureImporter:
@@ -66,10 +66,3 @@ TextureImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 101492
-  packageName: Voxel Scifi Environment - Free version
-  packageVersion: 1.0
-  assetPath: Assets/voxel_scifi_free/Textures/col_B.png
-  uploadId: 203674

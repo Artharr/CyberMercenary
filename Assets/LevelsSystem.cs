@@ -1,34 +1,59 @@
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class LevelsSystem : MonoBehaviour
 {
     private GameData gameData;
-    private Button Level1Button;
-    private Button Level2Button;
-    private Button Level3Button;
-    private Button Level4Button;
-    private Button Level5Button;
-    private Button Level6Button;
-    private Button Level7Button;
-    
+    [SerializeField] private Button[] levelButtons;
+
+    [SerializeField] private GameObject[] scenes;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
-    {
-        SaveSystem.LoadGame(gameData);
+    {   
+        scenes[0].gameObject.SetActive(true);
+        scenes[1].gameObject.SetActive(false);
+        gameData = SaveSystem.LoadGame();
+    
+        ApplyGameDataToLevels();
 
-        if (gameData.isLevel7Unlocked)
-        {
-            Level1Button.interactable = true;
-            Level2Button.interactable = true;
-            Level3Button.interactable = true;
-            Level4Button.interactable = true;
-            Level5Button.interactable = true;
-            Level6Button.interactable = true;
-            Level7Button.interactable = true;
-        }
     }
 
+    private void ApplyGameDataToLevels()
+    {
+       
+        for (int i = 0; i < levelButtons.Length; i++)
+        {
+            int levelIndex = i; 
+            bool isUnlocked = gameData.isLevelUnlocked[i]; 
+
+            levelButtons[i].interactable = isUnlocked; 
+            levelButtons[i].onClick.RemoveAllListeners(); 
+            if (isUnlocked)
+            {
+                levelButtons[i].onClick.AddListener(() => LoadLevel(levelIndex + 1)); 
+            }
+        }
+    }
+    private void LoadLevel(int levelNumber)
+    {
+        SceneManager.LoadScene($"Level_{levelNumber}");
+    }
     
+    public static void UnlockLevel(int levelNumber)
+    {
+        int levelIndex = levelNumber - 1;
+        GameData gameData = SaveSystem.LoadGame(); 
+
+        if (levelIndex >= 0 && levelIndex < gameData.isLevelUnlocked.Length)
+        {
+            gameData.isLevelUnlocked[levelIndex] = true; 
+            SaveSystem.SaveGame(gameData);
+            Debug.Log($"Poziom {levelIndex + 1} został odblokowany.");
+        }
+        else
+        {
+            Debug.LogError($"Nieprawidłowy indeks poziomu: {levelIndex}. Nie można odblokować.");
+        }
+    }
 }

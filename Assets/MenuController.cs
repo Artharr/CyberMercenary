@@ -93,6 +93,7 @@ public class MenuController : MonoBehaviour
    
    public void NewGameDialogYes()
    {
+      SaveSystem.CreateAndSaveNewGame();
       SceneManager.LoadScene(sceneToLoad);
    }
 

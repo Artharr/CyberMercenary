@@ -3,13 +3,7 @@ using UnityEngine;
 public class GameData
 {
     public int experience;
-    public bool isLevel1Unlocked;
-    public bool isLevel2Unlocked;
-    public bool isLevel3Unlocked;
-    public bool isLevel4Unlocked;
-    public bool isLevel5Unlocked;
-    public bool isLevel6Unlocked;
-    public bool isLevel7Unlocked;
+    public bool[] isLevelUnlocked;
     public int damageLevel;
     public int armorLevel;
     public int maxHealthLevel;
@@ -18,4 +12,23 @@ public class GameData
     public int expGainLevel;
     public int moveSpeedLevel;
     public int proUpgradeLevel;
+    
+    
+    public GameData()
+    {
+        experience = 0;
+
+        
+        isLevelUnlocked = new bool[7] { true, false, false, false, false, false, false };
+
+        damageLevel = 0;    
+        armorLevel = 0;    
+        maxHealthLevel = 0;  
+        healthRegenLevel = 0; 
+        attackSpeedLevel = 0; 
+        expGainLevel = 0;  
+        moveSpeedLevel = 0; 
+        proUpgradeLevel = 0; 
+    }
 }
+

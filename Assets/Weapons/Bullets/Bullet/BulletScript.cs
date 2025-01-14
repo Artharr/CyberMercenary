@@ -5,7 +5,7 @@ public class BulletScript : MonoBehaviour
 {
     [SerializeField]private float speed = 25f;
     private float lifetime = 5f;
-    public int damage = 20;
+    public float damage = 20f;
     void Start()
     {
         Destroy(gameObject, lifetime);

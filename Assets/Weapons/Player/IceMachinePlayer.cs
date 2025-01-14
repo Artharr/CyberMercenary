@@ -54,6 +54,32 @@ public class IceMachinePlayer : MonoBehaviour, IWeapon
 
     public void Upgrade()
     {
+        GameObject bullet = Instantiate(BulletBasedOnLevel(), transform.position, transform.rotation);
+    }
+    private GameObject BulletBasedOnLevel()
+    {
+        switch (level)
+        {
+            case 1:
+                return IcePrefabLvl1;
+            case 2:
+                return IcePrefabLvl2;
+            case 3:
+                return IcePrefabLvl3;
+            case 4:
+                return IcePrefabLvl4;
+            case 5:
+                return IcePrefabLvl5;
+        }
+        return null;
+    }
+    public void Activate()
+    {
+        InvokeRepeating(nameof(Shoot), 0f, fireRate);
+    }
+
+    public void Upgrade()
+    {
         level++;
     }
 }

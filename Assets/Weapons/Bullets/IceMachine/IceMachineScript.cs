@@ -13,7 +13,9 @@ public class IceMachineScript : MonoBehaviour
     {
         if (other.CompareTag("Enemy"))
         {
-            Debug.Log($"{other.name} is frozen");
+            //Debug.Log($"{other.name} is frozen");
+            Enemy enemy = other.gameObject.GetComponentInParent<Enemy>();
+            enemy.Freeze(freezeTime);
         }
     }
 }

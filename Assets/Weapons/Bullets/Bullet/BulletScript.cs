@@ -5,7 +5,7 @@ public class BulletScript : MonoBehaviour
 {
     [SerializeField]private float speed = 25f;
     private float lifetime = 5f;
-    public float damage = 20f;
+    public int damage = 20;
     void Start()
     {
         Destroy(gameObject, lifetime);
@@ -21,7 +21,10 @@ public class BulletScript : MonoBehaviour
     {
         if (other.CompareTag("Enemy"))
         {
-            Debug.Log($"{other.name} collided with bullet");
+            Enemy enemy = other.gameObject.GetComponentInParent<Enemy>();
+            enemy.TakeDamage(damage);
+            //Debug.Log($"{other.name} collided with bullet");
+            
             Destroy(gameObject);
         }
     }

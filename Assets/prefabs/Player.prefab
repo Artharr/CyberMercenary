@@ -195,9 +195,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1199283260a7cad41a9cbb8c038290d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefabLvl1: {fileID: 6964122086894304859, guid: 743d3371fee9eb64c8c01716fae0c071, type: 3}
-  bulletPrefabLvl2: {fileID: 6964122086894304859, guid: 946744b99a5e4074f8246249b5dac7d5, type: 3}
-  bulletPrefabLvl3: {fileID: 6964122086894304859, guid: ea3e38f5e94d5214da59c21abc5a9393, type: 3}
+  bulletPrefabLvl1: {fileID: 6964122086894304859, guid: 366b0673ba8b3f04ca4ddc9fdecca1ca, type: 3}
+  bulletPrefabLvl2: {fileID: 6964122086894304859, guid: 852751b31a3cecd4d91ae2e0385dce18, type: 3}
+  bulletPrefabLvl3: {fileID: 6964122086894304859, guid: f6eccd77671ffe849afbe0fbe2819fa4, type: 3}
 --- !u!114 &1868460149708911919
 MonoBehaviour:
   m_ObjectHideFlags: 0

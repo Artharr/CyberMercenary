@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class TurretPlayer : MonoBehaviour, IWeapon
@@ -7,14 +8,21 @@ public class TurretPlayer : MonoBehaviour, IWeapon
     public GameObject turretPrefabLvl3;
     private float fireRate = 10f;
     private int level = 1;
+    private bool isActive = false;
     void Start()
     {
-        Upgrade();
-        
-        Upgrade();
-        Upgrade();
-        Upgrade();
-        Activate();
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.V)&& !isActive)
+        {
+            Activate();
+        }
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            Upgrade();
+        }
     }
 
     // Update is called once per frame
@@ -42,6 +50,7 @@ public class TurretPlayer : MonoBehaviour, IWeapon
 
     public void Activate()
     {
+        isActive = true;
         InvokeRepeating("CreateTurret", 0f, fireRate);
     }
 

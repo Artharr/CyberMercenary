@@ -16,14 +16,13 @@ public class RiflePlayer : MonoBehaviour, IWeapon
 
     void Start()
     {
-        Upgrade();
-        Upgrade();
-        Upgrade();
-        Upgrade();
-        Activate();
     }
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.X)&& !isActive)
+        {
+            Activate();
+        }
         if (!isActive) return;
         shootTimmer += Time.deltaTime;
 
@@ -39,6 +38,10 @@ public class RiflePlayer : MonoBehaviour, IWeapon
                     shootTimmer = 0f;
                 }
             }
+        }
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            Upgrade();
         }
     }
 

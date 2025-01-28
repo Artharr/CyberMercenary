@@ -13,15 +13,15 @@ public class PistolPlayer : MonoBehaviour, IWeapon
     private bool isActive = false;
     private int level = 1;
 
-    void Start()
-    {
-    }
+    //void Start()
+    //{
+    //}
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Z)&& !isActive)
-        {
-            Activate();
-        }
+        //if (Input.GetKeyDown(KeyCode.Z)&& !isActive)
+        //{
+        //    Activate();
+        //}
         if (!isActive) return;
         shootTimmer += Time.deltaTime;
 
@@ -30,10 +30,10 @@ public class PistolPlayer : MonoBehaviour, IWeapon
             Shoot();
             shootTimmer = 0f;
         }
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            Upgrade();
-        }
+        //if (Input.GetKeyDown(KeyCode.P))
+        //{
+        //    Upgrade();
+        //}
     }
 
     private void Shoot()

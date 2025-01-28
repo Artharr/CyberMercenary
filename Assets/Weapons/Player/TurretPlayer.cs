@@ -9,21 +9,21 @@ public class TurretPlayer : MonoBehaviour, IWeapon
     private float fireRate = 10f;
     private int level = 1;
     private bool isActive = false;
-    void Start()
-    {
-    }
+    //void Start()
+    //{
+    //}
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.V)&& !isActive)
-        {
-            Activate();
-        }
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            Upgrade();
-        }
-    }
+    //private void Update()
+    //{
+    //    if (Input.GetKeyDown(KeyCode.V)&& !isActive)
+    //    {
+    //        Activate();
+    //    }
+    //    if (Input.GetKeyDown(KeyCode.P))
+    //    {
+    //        Upgrade();
+    //    }
+    //}
 
     // Update is called once per frame
     private void CreateTurret()

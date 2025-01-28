@@ -35,7 +35,7 @@ public class LevelsSystem : MonoBehaviour
             }
         }
     }
-    private void LoadLevel(int levelNumber)
+    public static void LoadLevel(int levelNumber)
     {
         SceneManager.LoadScene($"Level_{levelNumber}");
     }

@@ -15,12 +15,19 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float dashCooldown = 1.5f;
     [SerializeField] private float turnSpeed;
     [SerializeField] private float dashTime = 0.5f;
+    [SerializeField] private ParticleSystem particles;
+    [SerializeField] private PlayerData player;
     private Vector2 inputDir;
-    private bool isDahsing = false;
+    private GameData gameData;
+    
     private bool canDash = true;
     private float capsuleHeight = 0f;
     void Start()
     {
+        gameData = SaveSystem.LoadGame();
+
+        moveSpeed += gameData.moveSpeedLevel/5;
+
         moveAction.Enable();
         capsuleHeight = playerController.height/2;
         dashAction.Enable();
@@ -29,60 +36,66 @@ public class PlayerMovement : MonoBehaviour
 
     private void DashAction_performed(InputAction.CallbackContext obj)
     {
-        if (!isDahsing && canDash)
+        if (!player.isDashing && canDash)
         {
             inputDir = moveAction.ReadValue<Vector2>();
+            particles.Play();
             if (inputDir == Vector2.zero)
             {
                 inputDir = transform.forward;
             }
-            isDahsing = true;
+            player.isDashing = true;
             canDash = false;
         }
     }
 
     void Update()
     {
+        if(player.health > 0)
+        {
+            Vector3 moveDir = new Vector3(inputDir.x, 0, inputDir.y);
+            if (!player.isDashing)
+            {
+                inputDir = moveAction.ReadValue<Vector2>();
+                playerController.Move(moveDir.normalized * Time.deltaTime * moveSpeed);
+                dashCooldown -= Time.deltaTime;
+                if (dashCooldown < 0)
+                {
+                    dashCooldown = 1.5f;
+                    canDash = true;
+                }
+            }
+            else
+            {
 
-        Vector3 moveDir = new Vector3(inputDir.x, 0, inputDir.y);
-        if (!isDahsing)
-        {
-            inputDir = moveAction.ReadValue<Vector2>();
-            playerController.Move(moveDir.normalized * Time.deltaTime * moveSpeed);
-            dashCooldown -= Time.deltaTime;
-            if (dashCooldown < 0)
+                dashTime -= Time.deltaTime;
+                playerController.Move(moveDir.normalized * Time.deltaTime * dashSpeed);
+                if (dashTime < 0)
+                {
+                    dashTime = 0.5f;
+                    player.isDashing = false;
+                    particles.Stop();
+                }
+
+            }
+            if (moveDir != Vector3.zero)
             {
-                dashCooldown = 1.5f;
-                canDash = true ;
+                transform.rotation = Quaternion.Lerp(
+                                                    transform.rotation,
+                                                    Quaternion.LookRotation(moveDir, Vector3.up),
+                                                    turnSpeed);
+            }
+            bool hit = Physics.Raycast(transform.position, Vector3.down, out RaycastHit hitInfo, Mathf.Infinity);
+            if (hit)
+            {
+                transform.position = Vector3.Lerp(
+                                        transform.position,
+                                        new Vector3(transform.position.x, hitInfo.point.y + capsuleHeight, transform.position.z),
+                                        0.2f
+                                        );
             }
         }
-        else 
-        {
-            dashTime -= Time.deltaTime;
-            playerController.Move(moveDir.normalized * Time.deltaTime * dashSpeed);
-            if (dashTime < 0) 
-            {
-                dashTime = 0.5f;
-                isDahsing = false;
-            }
         
-        }
-        if (moveDir != Vector3.zero)
-        {
-            transform.rotation = Quaternion.Lerp(
-                                                transform.rotation,
-                                                Quaternion.LookRotation(moveDir, Vector3.up),
-                                                turnSpeed);
-        }
-        bool hit = Physics.Raycast(transform.position, Vector3.down, out RaycastHit hitInfo, Mathf.Infinity);
-        if (hit)
-        {
-            transform.position = Vector3.Lerp(
-                                    transform.position,
-                                    new Vector3(transform.position.x, hitInfo.point.y + capsuleHeight, transform.position.z),
-                                    0.2f
-                                    );
-        }
         
     }
 }

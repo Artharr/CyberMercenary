@@ -11,20 +11,20 @@ public class IceMachinePlayer : MonoBehaviour, IWeapon
     private int level = 1;
     bool isActive = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-    }
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.C)&& !isActive)
-        {
-            Activate();
-        }
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            Upgrade();
-        }
-    }
+    //void Start()
+    //{
+    //}
+    //private void Update()
+    //{
+    //    if (Input.GetKeyDown(KeyCode.C)&& !isActive)
+    //    {
+    //        Activate();
+    //    }
+    //    if (Input.GetKeyDown(KeyCode.P))
+    //    {
+    //        Upgrade();
+    //    }
+    //}
     void Shoot()
     {
         GameObject bullet = Instantiate(BulletBasedOnLevel(), transform.position, transform.rotation);

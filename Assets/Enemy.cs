@@ -6,7 +6,16 @@ public class Enemy : MonoBehaviour
     [SerializeField] private EnemyMovement enemyMovement;
     float freezeTimer = 0;
 
-    // Update is called once per frame
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            other.gameObject.GetComponentInParent<PlayerData>().Damage(10f);
+        }
+    }
+
+
     void Update()
     {
         if (freezeTimer > 0)
@@ -24,6 +33,11 @@ public class Enemy : MonoBehaviour
         HP -= damageAmount;
         if (HP < 0)
         {
+            if (!GlobalData.won)
+            {
+                GlobalData.reward += 10;
+            }
+
             Destroy(gameObject);
         }
     }

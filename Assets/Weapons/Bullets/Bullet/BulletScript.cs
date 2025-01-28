@@ -28,7 +28,7 @@ public class BulletScript : MonoBehaviour
             Enemy enemy = other.gameObject.GetComponentInParent<Enemy>();
             enemy.TakeDamage(damage);
             //Debug.Log($"{other.name} collided with bullet");
-            
+
             Destroy(gameObject);
         }
     }

@@ -11,8 +11,9 @@ public class RiflePlayer : MonoBehaviour, IWeapon
     private float ammoInButst = 3f;
     private float ammoUsed = 0f;
     private float shootTimmer = 0f;
-    private bool isActive = false;
-    private int level = 1;
+    public bool isActive { get; set; } = false;
+    public int Level { get; set; } = 1;
+    public string Name { get; set; } = "Rifle";
 
     //void Start()
     //{
@@ -51,7 +52,7 @@ public class RiflePlayer : MonoBehaviour, IWeapon
     }
     private GameObject BulletBasedOnLevel()
     {
-        switch (level)
+        switch (Level)
         {
             case 1:
                 return bulletPrefabLvl1;
@@ -74,8 +75,8 @@ public class RiflePlayer : MonoBehaviour, IWeapon
 
     public void Upgrade()
     {
-        level++;
-        switch (level)
+        Level++;
+        switch (Level)
         {
             case 1:
                 break;

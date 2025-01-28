@@ -12,12 +12,28 @@ public class GameUI : MonoBehaviour
     [SerializeField] private TextMeshProUGUI deathPointText;
     [SerializeField] private TextMeshProUGUI winPointText;
     [SerializeField]private LevelManager levelManager;
+    [SerializeField] private LevelUpgradeSystem levelUpgradeSystem;
+    private float levelExp;
+    private float requiredExp = 100;
+    [SerializeField] private Image expBar;
+
     private GameData gameData;
     private void Start()
     {
         levelManager.onWin += LevelManager_onWin;
-        
         playerData.onDamaged += PlayerData_onDamaged;
+    }
+
+    private void Update()
+    {
+        levelExp = GlobalData.tempEXP;
+        if (levelExp >= requiredExp)
+        {
+            levelUpgradeSystem.Open();
+            levelExp = 0;
+            GlobalData.tempEXP = 0;
+        }
+        expBar.fillAmount = Mathf.Lerp(expBar.fillAmount, levelExp / requiredExp,.1f);
     }
 
     private void LevelManager_onWin(object sender, int e)

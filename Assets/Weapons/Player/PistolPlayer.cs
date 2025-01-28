@@ -10,12 +10,14 @@ public class PistolPlayer : MonoBehaviour, IWeapon
     private float detectionRadius = 50f;
     private float fireRate = 2f;
     private float shootTimmer = 0f;
-    private bool isActive = false;
-    private int level = 1;
+    public bool isActive { get; set; } = false;
+    public int Level { get; set; } = 1;
+    public string Name { get; set; } = "Pistol";
 
-    //void Start()
-    //{
-    //}
+    void Start()
+    {
+        Activate();
+    }
     void Update()
     {
         //if (Input.GetKeyDown(KeyCode.Z)&& !isActive)
@@ -54,7 +56,7 @@ public class PistolPlayer : MonoBehaviour, IWeapon
 
     private GameObject BulletBasedOnLevel()
     {
-        switch (level)
+        switch (Level)
         {
             case 1:
                 return bulletPrefabLvl1;
@@ -98,8 +100,8 @@ public class PistolPlayer : MonoBehaviour, IWeapon
     }
     public void Upgrade()
     {
-        level++;
-        switch (level)
+        Level++;
+        switch (Level)
         {
             case 2:
                 fireRate = 1.5f;

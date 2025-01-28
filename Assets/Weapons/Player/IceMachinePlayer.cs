@@ -8,8 +8,9 @@ public class IceMachinePlayer : MonoBehaviour, IWeapon
     public GameObject IcePrefabLvl4;
     public GameObject IcePrefabLvl5;
     private float fireRate = 5f;
-    private int level = 1;
-    bool isActive = false;
+    public bool isActive { get; set; } = false;
+    public int Level { get; set; } = 1;
+    public string Name { get; set; } = "Ice Machine";
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     //void Start()
     //{
@@ -32,7 +33,7 @@ public class IceMachinePlayer : MonoBehaviour, IWeapon
 
     private GameObject BulletBasedOnLevel()
     {
-        switch (level)
+        switch (Level)
         {
             case 1:
                 return IcePrefabLvl1;
@@ -54,6 +55,6 @@ public class IceMachinePlayer : MonoBehaviour, IWeapon
 
     public void Upgrade()
     {
-        level++;
+        Level++;
     }
 }

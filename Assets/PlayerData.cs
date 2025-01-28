@@ -8,10 +8,12 @@ public class PlayerData : MonoBehaviour
     [HideInInspector]public bool isDashing = false;
     public event EventHandler<float> onDamaged;
     private GameData gameData;
+    public IWeapon[] weapons;
 
 
     private void Awake()
     {
+        weapons = gameObject.GetComponents<IWeapon>();
         gameData = SaveSystem.LoadGame();
         maxHealth += gameData.maxHealthLevel*10;
         health = maxHealth;

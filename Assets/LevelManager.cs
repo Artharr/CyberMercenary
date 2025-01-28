@@ -53,7 +53,12 @@ public class LevelManager : MonoBehaviour
                 GlobalData.won = true;
                 onWin.Invoke(this,levelReward + GlobalData.reward);
                 SaveSystem.SaveGame(gameData);
-                LevelsSystem.UnlockLevel(nextLvlID);
+                if(nextLvlID != -1)
+                {
+                    LevelsSystem.UnlockLevel(nextLvlID);
+                }
+                
+                GlobalData.reward = 0;
             }
         }
         else
@@ -63,6 +68,7 @@ public class LevelManager : MonoBehaviour
                 timerReached = true;
                 gameData.experience += GlobalData.reward;
                 SaveSystem.SaveGame(gameData);
+                GlobalData.reward = 0;
             }
             
         }

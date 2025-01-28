@@ -36,7 +36,9 @@ public class Enemy : MonoBehaviour
             if (!GlobalData.won)
             {
                 GlobalData.reward += 10;
+                GlobalData.tempEXP += 5;
             }
+            
 
             Destroy(gameObject);
         }

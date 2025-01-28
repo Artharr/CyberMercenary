@@ -229,7 +229,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7f4eabc5b8c8af449e6466b91312244, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 0
   isDashing: 0
+  weapons:
+  - {fileID: 0}
 --- !u!1 &3641166072286111140
 GameObject:
   m_ObjectHideFlags: 0

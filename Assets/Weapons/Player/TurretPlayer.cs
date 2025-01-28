@@ -7,8 +7,11 @@ public class TurretPlayer : MonoBehaviour, IWeapon
     public GameObject turretPrefabLvl2;
     public GameObject turretPrefabLvl3;
     private float fireRate = 10f;
-    private int level = 1;
-    private bool isActive = false;
+    //private bool isActive = false;
+    public bool isActive { get; set; } = false;
+    public int Level { get; set; } = 1;
+    public string Name { get; set; } = "Turret";
+
     //void Start()
     //{
     //}
@@ -32,20 +35,28 @@ public class TurretPlayer : MonoBehaviour, IWeapon
     }
     private GameObject BulletBasedOnLevel()
     {
-        switch (level)
+        if (Level < 5)
         {
-            case 1:
-                return turretPrefabLvl1;
-            case 2:
-                return turretPrefabLvl1;
-            case 3:
-                return turretPrefabLvl2;
-            case 4:
-                return turretPrefabLvl2;
-            case 5:
-                return turretPrefabLvl3;
+            switch (Level)
+            {
+                case 1:
+                    return turretPrefabLvl1;
+                case 2:
+                    return turretPrefabLvl1;
+                case 3:
+                    return turretPrefabLvl2;
+                case 4:
+                    return turretPrefabLvl2;
+                case 5:
+                    return turretPrefabLvl3;
+            }
         }
-        return null;
+        else
+        {
+            return turretPrefabLvl3;
+        }
+        return turretPrefabLvl1;
+
     }
 
     public void Activate()
@@ -56,8 +67,8 @@ public class TurretPlayer : MonoBehaviour, IWeapon
 
     public void Upgrade()
     {
-        level++;
-        switch (level)
+        Level++;
+        switch (Level)
         {
             case 1:
                 break;

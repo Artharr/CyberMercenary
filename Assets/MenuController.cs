@@ -176,12 +176,33 @@ public class MenuController : MonoBehaviour
 
    public void SetBrightness(float brightness)
    {
-      settings.brightness = brightness;
-      Color overlayColor = brightnessOverlay.color;
-      overlayColor.a = 1.0f - brightness; // Im większa jasność, tym mniejsza przezroczystość
-      brightnessOverlay.color = overlayColor;
-      brightnessTextValue.text = brightness.ToString("0.0");
-      Debug.Log($"Brightness set to: {brightness}");
+      if (BrightnessManager.Instance == null)
+      {
+         Debug.LogError("BrightnessManager singleton is not initialized!");
+         return;
+      }
+
+      // Znajdź obiekt BrightnessOverlay w hierarchii BrightnessManager
+      Transform overlayTransform = BrightnessManager.Instance.transform.Find("BrightnessOverlay");
+      if (overlayTransform != null)
+      {
+         brightnessOverlay = overlayTransform.GetComponent<Image>();
+         Color overlayColor = brightnessOverlay.color;
+         overlayColor.a = 1.0f - brightness; // Im większa jasność, tym mniejsza przezroczystość
+         brightnessOverlay.color = overlayColor;
+
+         // Zapisz wartość jasności w settings
+         settings.brightness = brightness;
+
+         // Zaktualizuj tekst wartości jasności
+         brightnessTextValue.text = brightness.ToString("0.0");
+
+         Debug.Log($"Brightness set to: {brightness}");
+      }
+      else
+      {
+         Debug.LogError("BrightnessOverlay not found under BrightnessManager!");
+      }
    }
 
    public void SetFullscreen(bool isFullscreen)
